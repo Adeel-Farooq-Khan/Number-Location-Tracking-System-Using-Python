@@ -4,7 +4,7 @@ import folium
 from opencage.geocoder import OpenCageGeocode
 
 # Replace 'your_phone_number_here' with the phone number you want to lookup
-phone_number = "+923214383141"
+phone_number = 'your_phone_number_here'
 
 # Parse the phone number
 pep_number = phonenumbers.parse(phone_number)
@@ -18,7 +18,7 @@ service_provider = carrier.name_for_number(pep_number, "en")
 print("Service Provider:", service_provider)
 
 # Set your OpenCage API key
-opencage_key = '4da1a9675d634febb6ad57f03c1ab992'
+opencage_key = 'your_opencage_api_key_here'
 
 # Initialize the OpenCageGeocode instance
 geocoder = OpenCageGeocode(opencage_key)
@@ -41,6 +41,7 @@ if results:
     folium.Marker([lat, lng], popup=location).add_to(my_map)
 
     # Save the map to an HTML file
-    my_map.save('irbaz.html')
+    my_map.save('mylocation.html')
 else:
     print("Location not found.")
+
